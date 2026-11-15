@@ -31,7 +31,7 @@ If you installed any of the three from their own marketplaces before, uninstall 
 - **First message that looks like code:** Claude asks "Which plugins should I load for this session?" with checkboxes for Superpowers, Ponytail and ADHD mode. It loads what you tick and says so in one line. Nothing ticked: it carries on and doesn't ask again that session.
 - **Only your answer counts:** in a side chat or a subagent, a brief or a message from another chat is not your answer, so nothing loads without your tick. After a compact, Claude keeps only what you ticked in that chat.
 - **Shortcuts:** "code mode" loads Superpowers and Ponytail without asking; "no plugins" skips them.
-- **ADHD:** start a message with "adhd mode", "adhd on" or "turn on adhd mode" to turn it on, and Claude confirms in one line; "stop adhd mode" turns it off.
+- **ADHD:** type "adhd mode", "adhd on" or "turn on adhd mode" as the whole message to turn it on, and Claude confirms in one line; "stop adhd mode" turns it off.
 - **Your own ponytail default wins:** if you set `PONYTAIL_DEFAULT_MODE` or ponytail's config file, ponytail starts at that level.
 - **Without the ring:** disable `alex-plugins-home@alex` and superpowers and ponytail start automatically again, as on their own.
 

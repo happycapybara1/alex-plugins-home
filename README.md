@@ -29,8 +29,9 @@ If you installed any of the three from their own marketplaces before, uninstall 
 
 - **Session start:** superpowers, ponytail and i-have-adhd stay quiet. The ring adds about 300 tokens.
 - **First message that looks like code:** Claude asks "Which plugins should I load for this session?" with checkboxes for Superpowers, Ponytail and ADHD mode. It loads what you tick and says so in one line. Nothing ticked: it carries on and doesn't ask again that session.
+- **Only your answer counts:** in a side chat or a subagent, a brief or a message from another chat is not your answer, so nothing loads without your tick. After a compact, Claude keeps only what you ticked in that chat.
 - **Shortcuts:** "code mode" loads Superpowers and Ponytail without asking; "no plugins" skips them.
-- **ADHD:** "adhd mode" (or "adhd on") turns it on and Claude confirms in one line; "stop adhd mode" turns it off.
+- **ADHD:** start a message with "adhd mode", "adhd on" or "turn on adhd mode" to turn it on, and Claude confirms in one line; "stop adhd mode" turns it off.
 - **Your own ponytail default wins:** if you set `PONYTAIL_DEFAULT_MODE` or ponytail's config file, ponytail starts at that level.
 - **Without the ring:** disable `alex-plugins-home@alex` and superpowers and ponytail start automatically again, as on their own.
 
@@ -38,7 +39,7 @@ If you installed any of the three from their own marketplaces before, uninstall 
 
 - Claude Code only (terminal, desktop app, IDE). Web sessions at claude.ai/code don't load plugins you install yourself.
 - While the ring is enabled, Claude Code keeps its three dependencies on: disable the ring first to turn one of them off.
-- In a run with no one to answer (`claude -p`, scheduled tasks), Claude loads both without asking and says so.
+- Where Claude cannot ask (`claude -p`, scheduled tasks), it loads nothing.
 
 ## Update
 

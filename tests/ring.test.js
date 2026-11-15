@@ -31,12 +31,18 @@ test('the session-start text tells Claude to ask once, with a checkbox per plugi
     '"ADHD mode"',
     'alex-superpowers:using-superpowers',
     'alex-ponytail:ponytail',
-    'Loaded: superpowers, ponytail.',
+    'Loaded: <names>.',
     'code mode',
     'no plugins',
+    "Only the user's own words in this chat count",
+    'After a compact, keep only what the user ticked in this chat.',
+    'If you cannot ask, load nothing.',
   ]) {
     assert.ok(text.includes(phrase), `missing: ${phrase}`);
   }
+  // The old fallback ("With no one to answer, load Superpowers and Ponytail") let Claude
+  // load both in side chats and subagents, where nobody had ticked them.
+  assert.ok(!text.includes('load Superpowers and Ponytail'), 'no fallback load without a tick');
   assert.ok(text.split(/\s+/).filter(Boolean).length < 140, 'keep the always-on text short');
 });
 
